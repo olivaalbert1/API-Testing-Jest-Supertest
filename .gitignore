@@ -1,0 +1,61 @@
+# Node.js specific
+node_modules
+npm-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build output
+dist
+build
+out
+public/build
+
+# Package managers lock files (already covered by node_modules but for extra safety or specific cases)
+# package-lock.json
+# yarn.lock
+pnpm-lock.yaml
+
+# Logs
+*.log
+
+# Editor and IDE specific files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Debug and coverage reports
+debug.log
+coverage/
+lcov-report/
+
+# Optional: Ignore bundled dependencies (if you bundle your project)
+# bundle/
+
+# Optional: Ignore documentation outputs
+# docs/
+
+# Optional: Ignore specific build tool outputs
+# webpack-bundle.js
+# vite-ssr-dist/
+
+# Add any other project-specific files or directories you want to ignore
+# Example:
+# data/local.sqlite

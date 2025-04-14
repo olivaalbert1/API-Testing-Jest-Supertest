@@ -33,8 +33,6 @@ Make sure you have the following installed on your system:
 2.  Install the dependencies using npm or yarn:
     ```bash
     npm install
-    # or
-    yarn install
     ```
 
 ## Running the API
