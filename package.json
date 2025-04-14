@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node --watch src/index.js",
+    "test": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "Albert Oliva Roura",
