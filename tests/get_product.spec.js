@@ -3,10 +3,16 @@ import request from 'supertest';
 
 describe('Products', () => {
     describe('GET /products', () => {
-        test('should respond with 200 OK', async () => {
-            const response = await request(app).get('/products');
-            expect(response.statusCode).toBe(200)
-        });
+        
+        it('should respond with an array of products and status code 200', async () => {
+            const response = await request(app)
+              .get('/products')
+              .expect('Content-Type', /json/)
+              .expect(200);
+        
+            expect(Array.isArray(response.body)).toBe(true);
+            // Add more assertions about the structure and content of the response
+          });
 
         test('should respond with Array', async () => {
             const response = await request(app).get('/products');
