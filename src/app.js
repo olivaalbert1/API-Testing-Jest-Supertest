@@ -62,11 +62,11 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
 });
-// // Middleware to handle OPTIONS requests
-// app.options('*', (req, res) => {
-//     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-//     res.sendStatus(200);
-// });
+// Middleware to handle OPTIONS requests
+app.options(/(.*)/, (req, res) => {
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.sendStatus(200);
+});
 
 // Export the app for testing purposes
 export default app;
