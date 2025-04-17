@@ -25,7 +25,7 @@ let products = [
 
 app.get('/', (req, res) => {
     res.send(products);
-    });
+});
 
 app.get('/products', (req, res) => {
     res.status(200).send(products);
@@ -42,8 +42,21 @@ app.post('/product', (req, res) => {
 
     // send the id of the new product
     res.send(Number(newProduct.id));
-}
-);
+});
+
+app.put('/product/:id', (req, res) => {
+    // update the product with the given id
+    const id = Number(req.params.id);
+    const product = products.find(p => p.id === id);
+    if (!product) {
+        return res.status(404).send('Product not found');
+    }
+    product.name = req.body.name;
+    product.price = req.body.price;
+
+    // send the updated product
+    res.send(product);
+});
 
 // Middleware to handle 404 errors
 app.use((req, res, next) => {

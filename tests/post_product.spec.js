@@ -1,7 +1,6 @@
 import app from '../src/app.js';
 import request from 'supertest';
 
-
 describe('POST /product', () => {
     test('should respond with status code 200', async () => {
         const response = await request(app)
