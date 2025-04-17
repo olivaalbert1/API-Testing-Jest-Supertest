@@ -4,6 +4,11 @@ const app = express();
 
 // Middleware to parse JSON request body
 app.use(express.json());
+// Middleware to log request details
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.url}`);
+    next();
+});
 
 let products = [
     { id: 1, name: 'Product 1', price: 100 },
@@ -27,8 +32,6 @@ app.get('/products', (req, res) => {
 });
 
 app.post('/product', (req, res) => {
-    console.log(req.body)
-
     // add a new product to the list
     const newProduct = {
         id: products.length + 1,
@@ -41,6 +44,29 @@ app.post('/product', (req, res) => {
     res.send(Number(newProduct.id));
 }
 );
+
+// Middleware to handle 404 errors
+app.use((req, res, next) => {
+    // console.error(err.stack);
+    res.status(404).send('Not Found');
+});
+
+// Middleware to handle 500 errors
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Internal Server Error');
+});
+// Middleware to handle CORS
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
+// // Middleware to handle OPTIONS requests
+// app.options('*', (req, res) => {
+//     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+//     res.sendStatus(200);
+// });
 
 // Export the app for testing purposes
 export default app;
