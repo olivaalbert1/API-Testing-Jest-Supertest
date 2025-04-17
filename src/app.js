@@ -58,6 +58,19 @@ app.put('/product/:id', (req, res) => {
     res.send(product);
 });
 
+app.delete('/product/:id', (req, res) => {
+    // delete the product with the given id
+    const id = Number(req.params.id);
+    const productIndex = products.findIndex(p => p.id === id);
+    if (productIndex === -1) {
+        return res.status(404).send('Product not found');
+    }
+    products.splice(productIndex, 1);
+
+    // send a success message
+    res.send('Product deleted successfully');
+});
+
 // Middleware to handle 404 errors
 app.use((req, res, next) => {
     // console.error(err.stack);
