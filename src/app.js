@@ -20,8 +20,15 @@ app.get('/products', (req, res) => {
         { id: 9, name: 'Product 9', price: 900 },
         { id: 10, name: 'Product 10', price: 1000 }
     ]);
-    console.log('Products list');
 });
+
+app.post('/product', (req, res) => {
+    // Middleware to parse JSON request body
+    app.use(express.json());
+    // Simulate product creation and return a random ID
+    res.status(200).send(Math.floor(Math.random() * 1000));
+}
+);
 
 // Export the app for testing purposes
 export default app;
