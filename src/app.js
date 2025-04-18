@@ -71,10 +71,18 @@ app.delete('/product/:id', (req, res) => {
     res.send('Product deleted successfully');
 });
 
+// Middleware to handle invalid JSON
+app.use((err, req, res, next) => {
+    if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
+        return res.status(400).send({ status: 400, message: 'Invalid JSON' });
+    }
+    next();
+});
+
 // Middleware to handle 404 errors
 app.use((req, res, next) => {
-    // console.error(err.stack);
     res.status(404).send('Not Found');
+    next();
 });
 
 // Middleware to handle 500 errors
