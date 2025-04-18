@@ -9,8 +9,13 @@ jobs:
   run_integration_tests:
     runs-on: ubuntu-18-04
     steps:
-      - name: install dependencies
-        run: npm install
-      - name: run tests
-        run: npm run test
-  
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 18
+    - run: npm install
+    - name: run integration tests
+      run: npm run test
