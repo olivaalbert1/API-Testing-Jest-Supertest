@@ -1,0 +1,16 @@
+name: Integration test
+
+on:
+  push:
+    branches:
+      main
+
+jobs:
+  run_integration_tests:
+    runs-on: ubuntu-18-04
+    steps:
+      - name: install dependencies
+        run: npm install
+      - name: run tests
+        run: npm run test
+  
