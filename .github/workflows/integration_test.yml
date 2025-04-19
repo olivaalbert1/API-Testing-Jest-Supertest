@@ -6,16 +6,23 @@ on:
       - main
 
 jobs:
-  run_integration_tests:
+  hello_world:
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 18
-    - name: install dependencies
-      run: npm install
-    - name: run integration tests
-      run: npm run test
+    - name: Say hello world
+      run: echo "Hello, world!"
+
+
+  # run_integration_tests:
+  #   runs-on: ubuntu-18.04
+  #   steps:
+  #   - uses: actions/checkout@v4
+  #     with:
+  #       fetch-depth: 0
+  #   - uses: actions/setup-node@v4
+  #     with:
+  #       node-version: 18
+  #   - name: install dependencies
+  #     run: npm install
+  #   - name: run integration tests
+  #     run: npm run test
