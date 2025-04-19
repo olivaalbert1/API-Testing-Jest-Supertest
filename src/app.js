@@ -102,4 +102,4 @@ app.options(/(.*)/, (req, res) => {
 });
 
 // Export the app for testing purposes
-export default app;
+module.exports = app;
