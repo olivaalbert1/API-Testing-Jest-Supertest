@@ -45,6 +45,7 @@ temp/
 debug.log
 coverage/
 lcov-report/
+Report
 
 # Optional: Ignore bundled dependencies (if you bundle your project)
 # bundle/
