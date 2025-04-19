@@ -6,7 +6,7 @@ This repository contains an example API built with [Express](https://expressjs.c
 
 The API provides a basic CRUD (Create, Read, Update, Delete) operations for an entity called 'Product'.
 
-The main goal of this repository is to demonstrate how to build a robust API with Express and how to ensure its correct functionality through integration tests using Jest and Supertest.
+The main goal of this repository is to demonstrate how to build a robust API with Express and how to ensure its correct functionality through integration tests using Jest and Supertest running in a CI/CD github actions. The pipeline runs in every push to main branchs.
 
 ## Technologies Used
 
