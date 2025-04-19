@@ -21,12 +21,7 @@ jobs:
       run: npm ci
     - name: RUN SuperTest API Testing
       run: npm test
-    - name: Archive SuperTest test report
-      uses: actions/upload-artifact@v4
-      with:
-        name: SuperTest-test-report
-        path: Report
-    - name: Upload SuperTest  report to GitHub
+    - name: Archive SuperTest test repor tto GitHub
       uses: actions/upload-artifact@v4
       with:
         name: SuperTest-test-report
