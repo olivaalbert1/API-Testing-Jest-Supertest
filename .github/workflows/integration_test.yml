@@ -5,16 +5,29 @@ on:
       - main
 
 jobs:
-  IntegrationTest:
+  RUN-SuperTest-API-Test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
     steps:
     - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
       with:
-        fetch-depth: 0
-    - uses: actions/setup-node@v4
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: Installation of related packages
+      run: npm ci
+    - name: RUN SuperTest API Testing
+      run: npm test
+    - name: Archive SuperTest test report
+      uses: actions/upload-artifact@v3
       with:
-        node-version: 18
-    - name: install dependencies
-      run: npm install
-    - name: run integration tests
-      run: NODE_OPTIONS=--experimental-vm-modules jest
+        name: SuperTest-test-report
+        path: Report
+    - name: Upload SuperTest  report to GitHub
+      uses: actions/upload-artifact@v3
+      with:
+        name: SuperTest-test-report
+        path: Report
