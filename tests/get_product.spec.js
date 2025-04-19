@@ -1,5 +1,5 @@
-import app from '../src/app.js';
-import request from 'supertest';
+const app = require('../src/app');
+const request = require('supertest');
 
 describe('Products', () => {
     describe('GET /products', () => {

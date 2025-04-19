@@ -1,4 +1,4 @@
-import app from './app.js';
+const app = require('express')();
 
 const PORT = process.env.PORT || 3000;
 // Start the server
