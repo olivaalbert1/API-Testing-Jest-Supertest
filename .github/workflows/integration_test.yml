@@ -1,17 +1,16 @@
-name: Integration test
-
+name: Hello world!
 on:
   push:
     branches:
       - main
 
 jobs:
-  hello_world:
-    runs-on: ubuntu-18.04
+  sayHelloWorld:
+    runs-on: ubuntu-latest
     steps:
-    - name: Say hello world
-      run: echo "Hello, world!"
-
+      - uses: gr2m/hello-world-js-action@v1.x
+        with:
+          greeting: Gregor
 
   # run_integration_tests:
   #   runs-on: ubuntu-18.04
