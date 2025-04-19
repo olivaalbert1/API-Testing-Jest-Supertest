@@ -1,7 +1,7 @@
 // Desc: Jest configuration file
 module.exports = {
     // Test files
-    testMatch: ['**/Specs/*.spec.js'],
+    testMatch: ['**/tests/*.spec.js'],
     reporters: [
         'default',
         [
