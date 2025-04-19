@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch src/index.js",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest --watch",
+    "test": "NODE_ENV=test jest",
+    "test:local": "NODE_OPTIONS=--experimental-vm-modules jest --watch",
     "test:coverage": "jest --coverage"
   },
   "keywords": [],
