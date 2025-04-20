@@ -1,3 +1,5 @@
+[![Integration test pipeline](https://github.com/olivaalbert1/API-Testing-Jest-Supertest/actions/workflows/integration_test.yml/badge.svg)](https://github.com/olivaalbert1/API-Testing-Jest-Supertest/blob/main/.github/workflows/integration_test.yml)
+
 # API-Testing-Jest-Supertest
 
 This repository contains an example API built with [Express](https://expressjs.com/) and thoroughly tested using [Jest](https://jestjs.io/) and [Supertest](https://github.com/visionmedia/supertest).
