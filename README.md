@@ -8,6 +8,8 @@ The API provides a basic CRUD (Create, Read, Update, Delete) operations for an e
 
 The main goal of this repository is to demonstrate how to build a robust API with Express and how to ensure its correct functionality through integration tests using Jest and Supertest running in a CI/CD github actions. The pipeline runs in every push to main branchs.
 
+![TestRun](tests/TestRun.png)
+
 ## Technologies Used
 
 * **[Node.js](https://nodejs.org/)**: JavaScript runtime environment on the server.
@@ -26,8 +28,8 @@ Make sure you have the following installed on your system:
 
 1.  Clone this repository:
     ```bash
-    git clone [https://github.com/olivaalbert1/API-Testing-Jest-Supertest#](https://github.com/olivaalbert1/API-Testing-Jest-Supertest#)
-    cd [API-Testing-Jest-Supertest]
+    git clone https://github.com/olivaalbert1/API-Testing-Jest-Supertest
+    cd API-Testing-Jest-Supertest
     ```
 
 2.  Install the dependencies using npm or yarn:
@@ -41,3 +43,12 @@ To start the development server for the API:
 
 ```bash
 npm run dev
+```
+
+## Running the API integration tests
+
+To start the API integration tests write in the console (it is not necessary server running):
+
+```bash
+npm run test
+
