@@ -23,8 +23,8 @@ The main goal of this repository is to demonstrate how to build a robust API wit
 
 Make sure you have the following installed on your system:
 
-* **[Node.js](https://nodejs.org/)** (recommended version: [indicate recommended or minimum version])
-* **[npm](https://www.npmjs.com/)** (installed with Node.js) or **[yarn](https://yarnpkg.com/)** (optional)
+* **[Node.js](https://nodejs.org/)**
+* **[npm](https://www.npmjs.com/)** installed with Node.js
 
 ## Installation
 
